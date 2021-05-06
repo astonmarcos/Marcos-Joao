@@ -1,0 +1,39 @@
+#CÓDIGO IMC PIB
+print('''Escolha o seu número
+[1] PIB
+[2] IMC ''')
+while True:
+    option = int(input('Sua opção: '))
+    if option == 1:
+        print("Você escolheu o cálculo do PIB!")
+        c = float(input("digite o valor do consumo:"))
+        i = float(input("digite o valor dos investimentos:"))
+        g = float(input("digite o valor dos gastos do governo:"))
+        x = float(input("digite o valor das exportações:"))
+        im = float(input("digite o valor das importações:"))
+        pib = float(c + i + g + (x - im))
+
+        print("ta ai o resultado em U$ bilhões: ", pib)
+
+    elif option == 2:
+        print("Você escolheu o cálculo do IMC!")
+        a = float(input("Digite a sua altura, em m: "))
+        p = float(input("Digite o seu peso, em Kg: "))
+        i = float(p / a ** 2)
+
+        print("Parabéns!")
+
+        print("O seu IMC é igual a", round(i, 3))
+
+        if i < 18.5:
+            print("Você está abaixo do peso!")
+        elif 18.6 < i < 24.9:
+            print("Você está no peso normal!")
+        elif 25.0 < i < 29.9:
+            print("Você está acima do peso!")
+        elif 30.0 < i:
+            print("Você está no muito gordo, seu obeso!")
+
+    continua = input('Deseja sair? Digite "q" para sair ou Enter para fazer uma nova escolha:')
+    if (continua == 'q'):
+        break
